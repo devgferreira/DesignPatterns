@@ -1,50 +1,61 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9677A22-5E23-49AA-8791-E9C012C24F91}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <RootNamespace>Builder</RootNamespace>
+    <AssemblyName>Builder</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\net6.0\Builder.AssemblyInfo.cs" />
-    <Compile Include="obj\Debug\net6.0\Builder.GlobalUsings.g.cs" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
-
   <ItemGroup>
-    <Content Include="obj\Builder.csproj.nuget.dgspec.json" />
-    <Content Include="obj\Debug\Builder.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\project.assets.json" />
+    <Compile Include="Builders\IBuilder.cs" />
+    <Compile Include="Builders\VehicleBuilder.cs" />
+    <Compile Include="Components\Engine.cs" />
+    <Compile Include="Components\Transmission.cs" />
+    <Compile Include="Components\VehicleType.cs" />
+    <Compile Include="Directors\Director.cs" />
+    <Compile Include="Products\Vehicle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
-    <None Include="bin\Debug\Builder.exe" />
-    <None Include="bin\Debug\Builder.exe.config" />
-    <None Include="bin\Debug\Builder.pdb" />
-    <None Include="Builder.csproj" />
-    <None Include="obj\Builder.csproj.nuget.g.props" />
-    <None Include="obj\Builder.csproj.nuget.g.targets" />
-    <None Include="obj\Debug\Builder.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\Builder.csprojAssemblyReference.cache" />
-    <None Include="obj\Debug\Builder.exe" />
-    <None Include="obj\Debug\Builder.pdb" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\net6.0\Builder.AssemblyInfoInputs.cache" />
-    <None Include="obj\Debug\net6.0\Builder.assets.cache" />
-    <None Include="obj\Debug\net6.0\Builder.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\net6.0\Builder.GeneratedMSBuildEditorConfig.editorconfig" />
-    <None Include="obj\project.nuget.cache" />
+    <None Include="App.config" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="bin\Debug\net6.0\" />
-    <Folder Include="bin\Release\" />
-    <Folder Include="obj\Debug\net6.0\refint\" />
-    <Folder Include="obj\Debug\net6.0\ref\" />
-    <Folder Include="obj\Debug\TempPE\" />
-  </ItemGroup>
-
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
