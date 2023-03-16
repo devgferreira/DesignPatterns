@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net6.0\Builder.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net6.0\Builder.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\Builder.csproj.nuget.dgspec.json" />
+    <Content Include="obj\Debug\Builder.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\Builder.exe" />
+    <None Include="bin\Debug\Builder.exe.config" />
+    <None Include="bin\Debug\Builder.pdb" />
+    <None Include="Builder.csproj" />
+    <None Include="obj\Builder.csproj.nuget.g.props" />
+    <None Include="obj\Builder.csproj.nuget.g.targets" />
+    <None Include="obj\Debug\Builder.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Builder.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\Builder.exe" />
+    <None Include="obj\Debug\Builder.pdb" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\net6.0\Builder.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net6.0\Builder.assets.cache" />
+    <None Include="obj\Debug\net6.0\Builder.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net6.0\Builder.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\project.nuget.cache" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\net6.0\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\net6.0\refint\" />
+    <Folder Include="obj\Debug\net6.0\ref\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+
+</Project>
